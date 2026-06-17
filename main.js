@@ -14,7 +14,7 @@ const sizes = {
 // renderer
 const renderer = new THREE.WebGLRenderer({canvas: canvas});
 renderer.setSize(sizes.width, sizes.height);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 //resize handling
 function handleResize(){
@@ -22,8 +22,8 @@ function handleResize(){
     sizes.height = window.innerHeight
     camera.aspect=sizes.width / sizes.height
     camera.updateProjectionMatrix();
-
     renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 }
 window.addEventListener("resize",handleResize)
 
@@ -34,8 +34,8 @@ const far = 1000;
 const camera = new THREE.PerspectiveCamera(fov,sizes.width/ sizes.height, near, far);
 
 // camera positioning
-camera.position.set(10, 10, 10);
-camera.lookAt(0, 0, 0)
+camera.position.set(0, 3, -2);
+camera.lookAt(0, 2, 0)
 
 // lighting
 const light = new THREE.AmbientLight(0xFFFFFF, 5);
@@ -43,13 +43,16 @@ scene.add(light);
 
 // loading plane-land
 loader.load( 'models/Plane-land.glb', function ( gltf ) {
-
   scene.add( gltf.scene );
-
 }, undefined, function ( error ) {
-
   console.error( error );
+} );
 
+// loading character
+loader.load( 'models/samurai-model.glb', function ( gltf ) {
+  scene.add( gltf.scene );
+}, undefined, function ( error ) {
+  console.error( error );
 } );
 
 // showing everything
