@@ -9,3 +9,15 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+
+
+loader.load( 'public/models/Plane-land.glb', function ( gltf ) {
+
+  scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+  console.error( error );
+
+} );
