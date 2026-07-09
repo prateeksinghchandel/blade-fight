@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
+    <main id="menu-screen" class="menu-screen">
+      <section class="menu-card">
+        <p class="menu-kicker">Blade Fight</p>
+        <h1>Enjoy the fight</h1>
+        <p class="menu-copy">
+          Fight with an enemy that learns with you.
+        </p>
+        <button id="start-button" class="start-button" type="button">
+          Start
+        </button>
+      </section>
+    </main>
+    <div id="hud" class="hud">
+      <section class="hud-panel hud-panel-enemy">
+        <span class="hud-label">Enemy</span>
+        <div class="hud-bar" role="progressbar" aria-label="Enemy health" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+          <div id="enemy-health-fill" class="hud-fill"></div>
+        </div>
+      </section>
+      <section class="hud-panel hud-panel-player">
+        <span class="hud-label">Player</span>
+        <div class="hud-bar" role="progressbar" aria-label="Player health" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+          <div id="player-health-fill" class="hud-fill"></div>
+        </div>
+      </section>
+    </div>
     <div id="experience-wrapper">
       <canvas id="experience-canvas"></canvas>
     </div>

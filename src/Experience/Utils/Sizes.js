@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import { EventEmitter } from "events";
 
-export class Sizes extends EventEmmiter {
-    constuctor(){
+export class Sizes extends EventEmitter {
+    constructor(){
         super();
         this.width = window.innerWidth;
         this.height = window.innerHeight;
